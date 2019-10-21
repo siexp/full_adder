@@ -1,11 +1,13 @@
 #include "full_adder.hpp"
 
-#include <stdexcept>
 #include <iostream>
 #include <limits>
+#include <stdexcept>
 
 void positive_plus_positive_no_overflow_test()
 {
+    std::cout << __FUNCTION__ << std::endl;
+
     if (add(5, 10) != 15)
     {
         throw std::logic_error{"5 + 10 != 15"};
@@ -14,6 +16,8 @@ void positive_plus_positive_no_overflow_test()
 
 void positive_plus_negative_no_overflow_test()
 {
+    std::cout << __FUNCTION__ << std::endl;
+
     if (add(5, -10) != -5)
     {
         throw std::logic_error{"5 + (-10) != -5"};
@@ -22,6 +26,8 @@ void positive_plus_negative_no_overflow_test()
 
 void negative_plus_positive_no_overflow_test()
 {
+    std::cout << __FUNCTION__ << std::endl;
+
     if (add(-5, 10) != 5)
     {
         throw std::logic_error{"(-5) + 10 != 5"};
@@ -30,6 +36,8 @@ void negative_plus_positive_no_overflow_test()
 
 void negative_plus_negative_no_overflow_test()
 {
+    std::cout << __FUNCTION__ << std::endl;
+
     if (add(-5, -10) != -15)
     {
         throw std::logic_error{"(-5) + (-10) != -15"};
@@ -39,6 +47,8 @@ void negative_plus_negative_no_overflow_test()
 
 void positive_plus_positive_overflow_test()
 {
+    std::cout << __FUNCTION__ << std::endl;
+
     try
     {
         add(5, std::numeric_limits< int >::max() );
@@ -53,6 +63,8 @@ void positive_plus_positive_overflow_test()
 
 void negative_plus_negative_overflow_test()
 {
+    std::cout << __FUNCTION__ << std::endl;
+
     try
     {
         add(-5, std::numeric_limits< int >::min() );
